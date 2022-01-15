@@ -1,0 +1,141 @@
+.header {
+  background-color: #7a6158;
+  padding: 25px 0 20px 0;
+  margin-bottom: 40px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__burger {
+    display: none;
+
+    @include phone {
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 20px;
+
+      &:hover {
+        cursor: pointer;
+        justify-content: center;
+
+        span {
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      span {
+        background-color: #fceff0;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 50%;
+        }
+        &:nth-child(3) {
+          top: 100%;
+        }
+      }
+    }
+  }
+  &__logo {
+    position: relative;
+
+    &:hover {
+      .header__logo-list {
+        animation-name: list;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+      }
+    }
+
+    &-main {
+      width: 123px;
+    }
+
+    &-list {
+      position: absolute;
+      left: 42px;
+      top: -20px;
+      width: 41px;
+      transform: rotate(0deg);
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @include phone {
+      display: none;
+    }
+
+    li {
+      margin-right: 40px;
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        a {
+          color: #d4e1ca;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__card {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #fceff0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #d4e1ca;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+@keyframes list {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
