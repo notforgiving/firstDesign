@@ -93,6 +93,11 @@
       margin-right: 40px;
       transition: 0.2s;
 
+      a {
+        font-size: 20px;
+        line-height: 22px;
+      }
+
       &:hover {
         transform: scale(1.1);
         a {
