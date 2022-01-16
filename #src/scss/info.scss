@@ -1,0 +1,45 @@
+.info {
+  margin-bottom: 60px;
+
+  @include phone {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+  &__block {
+    background-color: #ebe1dd;
+    padding: 30px;
+    box-shadow: 9px 9px 2px 0px #9da6ae;
+    max-width: 80%;
+    animation-name: boxShadowPuls;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+  }
+  &__text {
+    max-width: 90%;
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@keyframes boxShadowPuls {
+    0% {
+        box-shadow: 9px 9px 2px 0px #9da6ae;
+    }
+    50% {
+        box-shadow: 4px 4px 2px 0px #9da6ae;
+    }
+    100%{
+        box-shadow: 9px 9px 2px 0px #9da6ae;
+    }
+}
